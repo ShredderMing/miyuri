@@ -1,0 +1,22 @@
+{
+  "name": "miyuri",
+  "version": "0.0.1",
+  "description": "this is a preact image component",
+  "main": "dist/miyuri.js",
+  "source": "src/index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ShredderMing/miyuri"
+  },
+  "scripts": {
+    "build": "microbundle"
+  },
+  "keywords": ["preact", "preact-components", "image"],
+  "devDependencies": {
+    "microbundle": "^0.3.0"
+  },
+  "peerDependencies": {
+    "preact": "^8.2.7"
+  }
+}
