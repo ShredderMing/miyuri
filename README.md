@@ -38,9 +38,9 @@ export default ExamplePage extends Component {
 
 | 属性        | 描述                                                                                      |
 |-------------|-------------------------------------------------------------------------------------------|
-| src         | 图片链接                                                                                  |
-| placeholder | 如果是‘string’那么使用<img src={placeholder} />作为placeholder，否则使用<placeholder /> |
-| errorholder | 如果是‘string’那么使用<img src={errorholder} />作为errorholder，否则使用<errorholder /> |
+| `src`         | 图片链接                                                                                  |
+| `placeholder` | 如果是`string`那么使用 `<img src={placeholder} />`  作为placeholder，否则使用 `<placeholder />` |
+| `errorholder` | 如果是`string`那么使用 `<img src={errorholder} />` 作为errorholder，否则使用 `<errorholder />` |
 
 ## 其它
 
