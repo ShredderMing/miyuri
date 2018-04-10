@@ -28,11 +28,11 @@ import Image from 'miyuri';
 export default ExamplePage extends Component {
   render() {
     return (
-	    <ul>
-	      <li><Image src="1.jpg" placeholder="1.svg" /></li>
-			  <li><Image src="2.jpg" placeholder="2.svg" /></li>
-			  <li><Image src="3.jpg" placeholder="3.svg" /></li>
-	    </ul>
+      <ul>
+        <li><Image src="1.jpg" placeholder="1.svg" /></li>
+	<li><Image src="2.jpg" placeholder="2.svg" /></li>
+	<li><Image src="3.jpg" placeholder="3.svg" /></li>
+      </ul>
     );
   }
 }
@@ -47,11 +47,11 @@ import Image from 'miyuri/react';
 export default ExamplePage extends Component {
   render() {
     return (
-	    <ul>
-	      <li><Image src="1.jpg" placeholder="1.svg" /></li>
-			  <li><Image src="2.jpg" placeholder="2.svg" /></li>
-			  <li><Image src="3.jpg" placeholder="3.svg" /></li>
-	    </ul>
+      <ul>
+        <li><Image src="1.jpg" placeholder="1.svg" /></li>
+	<li><Image src="2.jpg" placeholder="2.svg" /></li>
+	<li><Image src="3.jpg" placeholder="3.svg" /></li>
+      </ul>
     );
   }
 }
@@ -72,11 +72,10 @@ export default ExamplePage extends Component {
 <script>
 import miyuri from 'miyuri/vue'
 export default {
-	name: 'ExamplePage',
-	components: {
-		miyuri
-	},
-
+  name: 'ExamplePage',
+  components: {
+    miyuri
+  },
 }
 </script>
 ```
