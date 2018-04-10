@@ -1,4 +1,5 @@
-import { h, Component, cloneElement } from 'preact'
+import { createElement, Component, cloneElement } from 'react'
+import PropTypes from 'prop-types'
 
 let observer
 const STATE = Object.freeze({
@@ -33,7 +34,7 @@ export default class Miyuri extends Component {
         { rootMargin: '50px 0px' }
       )
     }
-    this.domNode && (this.domNode.miyuriNode = this) // 当placeholder未指定时，不绑定domNode,直接使用<img src="..."/>
+    this.domNode && (this.domNode.miyuriNode = this)
     if (typeof this.props.placeholder === 'object') {
       observer.observe(this.domNode)
     }
@@ -71,27 +72,26 @@ export default class Miyuri extends Component {
     }
   }
 
-  render(props, { load }) {
+  render() {
+    const props = this.props
+    const load = this.state.load
     const imgProps = objectWithoutProperties(props, [
       'placeholder',
-      'errorholder',
-      'className'
+      'errorholder'
     ])
-    if (Boolean(props.className)) {
-      imgProps.class = props.className
-    }
+
     switch (load) {
       case STATE.LOADED:
-        return h('img', imgProps)
+        return createElement('img', imgProps)
       case STATE.INIT:
       case STATE.LOADING: {
         if (!props.placeholder) {
-          return h('img', imgProps)
+          return createElement('img', imgProps)
         } else if (typeof props.placeholder === 'string') {
           imgProps.src = props.placeholder
           imgProps.ref = c => (this.domNode = c)
-          imgProps.onload = this.onPlaceholderLoad
-          return h('img', imgProps)
+          imgProps.onLoad = this.onPlaceholderLoad
+          return createElement('img', imgProps)
         } else {
           return cloneElement(this.props.placeholder, {
             ref: c => (this.domNode = c)
@@ -100,10 +100,10 @@ export default class Miyuri extends Component {
       }
       case STATE.ERROR: {
         if (!props.errorholder) {
-          return h('img', imgProps)
+          return createElement('img', imgProps)
         } else if (typeof props.errorholder === 'string') {
           imgProps.src = props.errorholder
-          return h('img', imgProps)
+          return createElement('img', imgProps)
         } else {
           return this.props.errorholder
         }
@@ -112,6 +112,12 @@ export default class Miyuri extends Component {
         return null
     }
   }
+}
+
+Miyuri.propTypes = {
+  src: PropTypes.string.isRequired,
+  placeholder: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  errorholder: PropTypes.oneOfType([PropTypes.string, PropTypes.node])
 }
 
 /* utils */

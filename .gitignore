@@ -1,3 +1,15 @@
 /dist
 /node_modules
 .directory
+react.js
+react.js.map
+react.m.js
+react.m.js.map
+react.umd.js
+react.umd.js.map
+vue.js
+vue.js.map
+vue.m.js
+vue.m.js.map
+vue.umd.js
+vue.umd.js.map

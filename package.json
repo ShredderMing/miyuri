@@ -1,7 +1,7 @@
 {
   "name": "miyuri",
-  "version": "0.0.1",
-  "description": "this is a preact image component",
+  "version": "0.1.1",
+  "description": "this is an image component for react, preact and vue",
   "main": "dist/miyuri.js",
   "source": "src/index.js",
   "license": "MIT",
@@ -10,13 +10,29 @@
     "url": "https://github.com/ShredderMing/miyuri"
   },
   "scripts": {
-    "build": "microbundle"
+    "build": "npm-run-all --silent -p build:main build:react build:vue",
+    "build:main": "microbundle",
+    "build:react": "microbundle src/react -o react.js",
+    "build:vue": "microbundle src/vue -o vue.js"
   },
-  "keywords": ["preact", "preact-components", "image"],
+  "keywords": [
+    "preact",
+    "preact-components",
+    "react",
+    "react-components",
+    "vue",
+    "vue-components",
+    "image"
+  ],
   "devDependencies": {
-    "microbundle": "^0.3.0"
+    "microbundle": "^0.4.4",
+    "npm-run-all": "^4.1.2",
+    "preact": "^8.2.7",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.1"
   },
   "peerDependencies": {
-    "preact": "^8.2.7"
+    "react": "*",
+    "preact": "*"
   }
 }
